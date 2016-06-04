@@ -1,14 +1,12 @@
-CPPUNIT_PATH=./
-
-LIB_DIR=$(CPPUNIT_PATH)/lib
+CXX=g++
 CPPFLAGS=-fpermissive -Wall
 all: Main
 
 Main: Person.o
-	g++ -o MemberChurch Main.cpp Person.o $(CPPFLAGS)
+	$(CXX) -o MemberChurch Main.cpp Person.o $(CPPFLAGS)
 
 Person.o: Person.cpp Person.h
-	g++ -c Person.cpp $(CPPFLAGS)
+	$(CXX) -c Person.cpp $(CPPFLAGS)
 
 clean:
 	rm -f *.o MemberChurch *~
